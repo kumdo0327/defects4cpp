@@ -189,7 +189,7 @@ class CheckoutCommand(Command):
                 )
                 for extra in Path.iterdir(path_to_extra):
                     shutil.copytree(
-                        extra, Path(worktree.host, extra.stem), dirs_exist_ok=True
+                        extra, Path(worktree.host, extra.stem), True
                     )
 
             message.info(__name__, f"creating '.defects4cpp.json' at {worktree.host}")
